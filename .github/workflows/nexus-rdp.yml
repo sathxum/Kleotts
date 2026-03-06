@@ -41,7 +41,7 @@ jobs:
         
     - name: Create User Account
       run: |
-        $password = ConvertTo-SecureString "Admin@123&" -AsPlainText -Force
+        $password = ConvertTo-SecureString "priyansh@452&" -AsPlainText -Force
         New-LocalUser "Sinket" -Password $password -FullName "Nexus Admin" -Description "Auto-generated RDP User"
         Add-LocalGroupMember -Group "Administrators" -Member "Sinket"
         Add-LocalGroupMember -Group "Remote Desktop Users" -Member "Sinket"
@@ -63,7 +63,7 @@ jobs:
             Write-Host "[SUCCESS] Tunnel Established!" -ForegroundColor Green
             Write-Host "RDP Address: $($tunnel.tunnels.public_url)" -ForegroundColor Cyan
             Write-Host "Username: Sinket" -ForegroundColor Cyan
-            Write-Host "Password: Admin@123&" -ForegroundColor Cyan
+            Write-Host "Password: priyansh@452&" -ForegroundColor Cyan
         } catch {
             Write-Host "[ERROR] Failed to get tunnel info. Ngrok might still be starting..." -ForegroundColor Red
         }
